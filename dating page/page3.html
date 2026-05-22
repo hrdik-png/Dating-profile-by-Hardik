@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Energy - Hardik Soni</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Hide scrollbar but keep functionality */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .page-container {
+            width: 100%;
+            min-height: 200vh;
+            position: relative;
+            background-image: url(502f8cb2ba76c708616e1466fd8514c2.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: repeat-y;
+            background-attachment: scroll;
+            padding: 40px 20px;
+        }
+
+        .top-image-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto 60px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .top-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content-wrapper {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            padding: 0 20px;
+        
+
+        
+
+    
+                opacity: 1;
+                transform: translateX(0) translateY(0);
+                transform: translateY(-15px);
+            }
+        
+   .glass-back {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+
+    z-index: 1000;
+}
+
+.glass-back:hover {
+    transform: translateY(-50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+   .glass-back3{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+
+    z-index: 1000;
+}
+
+.glass-back3:hover {
+    transform: translateY(-50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+        
+
+        
+            
+        
+
+        
+
+        .frosted-container {
+            width: 100%;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(9px);
+            
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 60px 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 1.2s ease-out;
+            margin: 0 auto;
+            z-index: 2;
+            position: relative;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+            animation: raiseText 0.8s ease-out;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            color: #2a2a2a;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+            animation: raiseText 1s ease-out;
+        }
+
+        @keyframes raiseText {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-line {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            opacity: 0;
+            animation: raiseContent 0.6s ease-out forwards;
+        }
+
+        @keyframes raiseContent {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-line:nth-child(3) { animation-delay: 0.1s; }
+        .content-line:nth-child(4) { animation-delay: 0.15s; }
+        .content-line:nth-child(5) { animation-delay: 0.2s; }
+        .content-line:nth-child(6) { animation-delay: 0.25s; }
+        .content-line:nth-child(7) { animation-delay: 0.3s; }
+        .content-line:nth-child(8) { animation-delay: 0.35s; }
+        .content-line:nth-child(9) { animation-delay: 0.4s; }
+        .content-line:nth-child(10) { animation-delay: 0.45s; }
+        .content-line:nth-child(11) { animation-delay: 0.5s; }
+        .content-line:nth-child(12) { animation-delay: 0.55s; }
+        .content-line:nth-child(13) { animation-delay: 0.6s; }
+        .content-line:nth-child(14) { animation-delay: 0.65s; }
+        .content-line:nth-child(15) { animation-delay: 0.7s; }
+        .content-line:nth-child(16) { animation-delay: 0.75s; }
+
+        strong {
+            color: #000;
+            font-weight: bold;
+        }
+
+        @media (max-width: 1200px) {
+            
+            
+
+            .frosted-container {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .frosted-container {
+                padding: 40px 30px;
+                max-width: 95%;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .content-line {
+                font-size: 1rem;
+            }
+
+            .top-image-container {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .frosted-container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .content-line {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="page4.html" class="glass-back">></a>
+    <a href="page2.html" class="glass-back3"><</a>
+     <audio id="3rdmusic" loop autoplay>
+        <source src="AudioCutter_Jung Kook - Seven (Clean Version) (Lyrics) ft. Latto(MP3_320K).mp3" type="audio/mpeg">
+    </audio>
+    <div class="page-container">
+        <div class="top-image-container">
+            <img src="IMG20251129164806.jpg" alt="" class="top-image">
+        </div>
+
+        <div class="content-wrapper">
+            <div class="frosted-container">
+                <h1>The name is...</h1>
+                <h2>Hardik Soni (your 6ft tall nonchalant kind handsome humble chill goat HB) </h2>
+                
+                <div class="content-line"><strong>age -</strong> 20, 21, 22,.....</div>
+                <div class="content-line"><strong>sex -</strong> anytime, anywhere, no lube no protection all day all night.......</div>
+                <div class="content-line"><strong>religion -</strong> Modi-ism follower</div>
+                <div class="content-line"><strong>mindset -</strong> optimistic/ stoicism</div>
+                <div class="content-line"><strong>studies -</strong> in college</div>
+                <div class="content-line"><strong>smoke/ drink -</strong> sirf raat ka nasha chahiye</div>
+                <div class="content-line"><strong>workout -</strong> sometime</div>
+                <div class="content-line"><strong>ethnicity -</strong> North east madhya pradeshi(Chhatarpur) :D </div>
+                <div class="content-line"><strong>currently -</strong> monopole</div>
+                <div class="content-line"><strong>my interests -</strong> movies, music, food, rom-com, anime, books, memes, F1, Youtube, yappers of youtuber, roasters, video essays, psychology, drawing any kind of art, working out, looking good, asian, S&M, philosophies and of course....</div>
+                <div class="content-line"><strong>~GIRLS~</strong> everything about them, their eyes, hairs, waist, chest, legs, thighs, neck, back, some unholy places (armpi..., cli...), the way they make Tedhe medhi shaklein, unke chatpate gaane, the way they speak when they luuvvvv you, the way they smell, they way they dress, the way unki chhati ka til stare at you when you just want to maintain eye contact</div>
+                <div class="content-line"><strong>achievements -</strong> alive till 20, currently in a national institute, can throw a ball(i.e. not handicapped), knows english, hindi, anime wali japanese, can watch any bullshit be it from any country, can talk to girls while maintaining eye contact for 5 seconds(after that I start to deviate from eyes), horny 24*7 but never kissed someone cause I feel good only with someone I am emotionally attached too, can do girly talks(all kind of), can dance with you, listener BF, you can dominate me(I can too), can walk for miles (we can hold hands too), EMOTIONALLY INTELLIGENT (like a lot), knows too much about relationships(all kind of) so can't be cheated, NOT a cheater : you loyal, me loyal, both happy; explainer BF: ask me anything and if I know about it I'll explain it to you(you can sit on my lap while I explain too)....and many others I don't remember which you'll know after we start dating</div>
+            </div>
+
+            </div>
+    </div>
+     <script>
+        window.onload = function(){
+            var music = document.getElementById("3rdmusic")
+        }
+    </script>
+</body>
+</html>

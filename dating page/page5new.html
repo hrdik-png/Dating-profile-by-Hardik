@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memories Gallery</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2{
+    color: aliceblue;
+    text-shadow: 2px;
+}
+body {
+    background-image: url('download (1).jpeg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: repeat-y;
+    
+    overflow-x: hidden;
+}
+.audio-container{
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+.back-btn {
+    position: fixed;       /* stays fixed while scrolling */
+    top: 50%;              /* vertically centered */
+    left: 20px;            /* distance from left edge */
+    transform: translateY(-50%);
+    
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    z-index: 1000;         /* stays above everything */
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #444;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 50px;
+    padding: 50px;
+    justify-items: center;
+    position: relative;
+    width: 100%;
+    
+    overflow: hidden;
+}
+.glass-back {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+
+    z-index: 1000;
+}
+
+.glass-back:hover {
+    transform: translateY(-50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+ .glass-back3{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+
+    z-index: 1000;
+}
+
+.glass-back3:hover {
+    transform: translateY(-50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+        
+
+
+
+/* Floating items */
+.floating-item {
+   
+    width: 100%;
+    display: inline-block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transition: 
+        transform 0.4s cubic-bezier(0.34,1.56,0.64,1),
+        filter 0.4s ease,
+        opacity 0.4s ease;
+    transform-origin: center center;
+    cursor: pointer;
+    
+}
+
+.floating-item img,
+   
+.floating-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+.floating-item:hover{
+    transform: scale(1.67);
+    z-index: 10;
+    padding: 10px;
+}
+
+/* Hover global effect */
+.gallery-container.hover-active.floating-item {
+    transform: scale(0.7);
+    opacity: 0.4;
+    filter: blur(3px);
+}
+
+/* Active one */
+.gallery-container .hover-active .floating-item.active {
+    transform: scale(1.6);
+    opacity: 1;
+    filter: blur(0);
+    z-index: 9999;
+    box-shadow: 0 0 60px rgba(255,255,255,0.4);
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+<div class="audio-container">
+    <audio autoplay loop id="bgmusic">
+        <source src="2_Dilemma (Lyrics) - Nelly  ft. Kelly Rowland(MP3_320K).mp3" type="audio/mpeg">
+    </audio>
+
+</div>
+
+<div class="gallery-container">
+     <a href="page2.html" class="glass-back3"><</a>
+    <a href="page4.html" class="glass-back">←</a>
+
+
+    <div><h2>फूल है गुलाब का ,
+            नशा है शराब का, 
+            एक बार प्यार करलो मुझसे, 
+            बुखार उतर जाएगा आपका!</h2></div>
+    <!-- Just keeping few here for example — keep all yours -->
+     <div class="floating-item"><img src="Snapchat-225580079.jpg" alt="Memory 1"></div>
+        <div class="floating-item"><img src="Snapchat-1646133399.jpg" alt="Memory 2"></div>
+        <div class="floating-item"><img src="Snapchat-2082173991.jpg" alt="Memory 3"></div>
+        <div class="floating-item"><img src="Snapchat-1683919135.jpg" alt="Memory 4"></div>
+        
+        <div class="floating-item"><img src="Screenshot_2025-10-25-16-30-17-80_1c337646f29875672b5a61192b9010f9.jpg" alt="Memory 6"></div>
+        <div class="floating-item"><img src="Screenshot_2025-05-29-20-01-57-04_1c337646f29875672b5a61192b9010f9.jpg" alt="Memory 7"></div>
+        <div class="floating-item"><img src="Screenshot_2025-07-27-11-40-09-78_1c337646f29875672b5a61192b9010f9.jpg" alt="Memory 8"></div>
+        <div class="floating-item"><img src="RDT_20251201_1051526431889649902279186.jpg" alt="Memory 9"></div>
+        <div class="floating-item"><img src="Screenshot_2025-03-26-21-53-31-53_40deb401b9ffe8e1df2f1cc5ba480b12.jpg" alt="Memory 10"></div>
+        <div class="floating-item"><img src="Screenshot_2024-11-07-00-11-36-68_40deb401b9ffe8e1df2f1cc5ba480b12.jpg" alt="Memory 11"></div>
+        <div class="floating-item"><img src="RDT_20251008_0908301202454994907258703.jpg" alt="Memory 12"></div>
+        <div class="floating-item"><img src="Screenshot_2026-01-12-00-08-42-73_40deb401b9ffe8e1df2f1cc5ba480b12.jpg" alt="Memory 13"></div>
+        <div class="floating-item"><img src="Screenshot_2025-07-20-08-54-33-37_1c337646f29875672b5a61192b9010f9.jpg" alt="Memory 14"></div>
+        <div class="floating-item"><img src="Screenshot_2025-05-18-02-42-05-36_1c337646f29875672b5a61192b9010f9.jpg" alt="Memory 15"></div>
+        <div class="floating-item"><img src="Screenshot_2026-01-13-20-36-07-18_40deb401b9ffe8e1df2f1cc5ba480b12.jpg" alt="Memory 16"></div>
+        <div class="floating-item"><img src="Screenshot_2026-02-11-16-10-12-34_1c337646f29875672b5a61192b9010f9.jpg" alt="Memory 17"></div>
+        <div class="floating-item"><img src="Screenshot_2026-01-14-22-23-40-96_e2d5b3f32b79de1d45acd1fad96fbb0f.jpg" alt="Memory 18"></div>
+        
+        <!-- Second batch of images -->
+        <div class="floating-item"><img src="Screenshot_2025-12-23-00-23-57-44_1c337646f29875672b5a61192b9010f9.jpg" alt="Memory 19"></div>
+        <div class="floating-item"><img src="Screenshot_2025-07-15-11-35-49-91_1c337646f29875672b5a61192b9010f9.jpg" alt="Memory 20"></div>
+        <div class="floating-item"><img src="RDT_20251207_2123272710952720931206378.jpg" alt="Memory 21"></div>
+        <div class="floating-item"><img src="Screenshot_2026-01-19-09-06-41-54_40deb401b9ffe8e1df2f1cc5ba480b12.jpg" alt="Memory 22"></div>
+        <div class="floating-item"><img src="IMG-20260117-WA0006.jpeg" alt="Memory 23"></div>
+    
+        <div class="floating-item"><img src="Snapchat-1047841404.jpg" alt="Memory 25"></div>
+        <div class="floating-item"><img src="IMG-20240901-WA0000.jpg" alt="Memory 26"></div>
+        <div class="floating-item">
+            <video autoplay loop muted playsinline>
+                <source src="1000214763.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="floating-item"><img src="IMG_20250812_215713.jpg" alt="Memory 27"></div>
+        <div class="floating-item"><img src="RDT_20251201_112539988368512342551142.jpg" alt="Memory 28"></div>
+        <div class="floating-item"><img src="IMG20251108174224.jpg" alt="Memory 29"></div>
+        <div class="floating-item"><img src="IMG20251129164806.jpg" alt="Memory 30"></div>
+        <div class="floating-item"><img src="Snapchat-790867261.jpg" alt="Memory 31"></div>
+        <div class="floating-item"><img src="IMG_20251003_145310_732.jpg" alt="Memory 32"></div>
+        <div class="floating-item"><img src="IMG-20251003-WA0080.jpg" alt="Memory 33"></div>
+        <div class="floating-item"><img src="IMG20251212081941.jpg" alt="Memory 34"></div>
+        
+        <!-- Third batch of images -->
+        <div class="floating-item"><img src="IMG20251230171414.jpg" alt="Memory 35"></div>
+        <div class="floating-item"><img src="InShot_20251218_224237659.jpg" alt="Memory 36"></div>
+        <div class="floating-item"><img src="Snapchat-1092768655.jpg" alt="Memory 37"></div>
+        <div class="floating-item"><img src="IMG_20251127_141328_648.jpg" alt="Memory 38"></div>
+        <div class="floating-item"><img src="Snapchat-544878039.jpg" alt="Memory 39"></div>
+        <div class="floating-item"><img src="Snapchat-990084946.jpg" alt="Memory 40"></div>
+        <div class="floating-item">
+            <video autoplay loop muted playsinline>
+                <source src="InShot_20260212_235353698.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="floating-item"><img src="Snapchat-1755734251.jpg" alt="Memory 41"></div>
+        <div class="floating-item"><img src="Snapchat-2099906602.jpg" alt="Memory 42"></div>
+        <div class="floating-item"><img src="Snapchat-1058595668.jpg" alt="Memory 43"></div>
+        <div class="floating-item"><img src="Snapchat-847065373.jpg" alt="Memory 44"></div>
+        <div class="floating-item"><img src="Snapchat-1975501452.jpg" alt="Memory 45"></div>
+        <div class="floating-item"><img src="Snapchat-2139704122.jpg" alt="Memory 46"></div>
+        <div class="floating-item"><img src="Snapchat-1938902427.jpg" alt="Memory 47"></div>
+        <div class="floating-item"><img src="Snapchat-903226751.jpg" alt="Memory 48"></div>
+        <div class="floating-item"><img src="Snapchat-1412996260.jpg" alt="Memory 49"></div>
+        <div class="floating-item"><img src="Snapchat-1785987525.jpg" alt="Memory 50"></div>
+        <div class="floating-item"><img src="IMG_20260208_171811.jpg" alt="Memory 51"></div>
+
+</div>
+
+<script>
+    window.onload = function(){
+        var music = document.getElementById("bgmusic");
+        music.play();
+    };
+
+function goBack(){
+    window.history.back();
+}
+
+
+</script>
+
+</body>
+</html>
